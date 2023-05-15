@@ -37,6 +37,14 @@ export const Card = styled.div`
     justify-content: center;
     align-items: center;
   }
+
+  @media (max-width: 768px) {
+    min-height: 15rem;
+
+    p {
+      font-size: 0.8rem;
+    }
+  }
 `;
 
 export const Gradient = styled.div`
@@ -57,6 +65,11 @@ export const Grid = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   gap: 3rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 2rem;
+  }
 `;
 
 export const CardCuisine = styled.div`
@@ -98,6 +111,20 @@ export const SLink = styled(NavLink)`
   &.active {
     background: linear-gradient(to right, #f27121, #e94057);
   }
+
+  @media (max-width: 768px) {
+    width: 3rem;
+    height: 3rem;
+    margin-right: 0.5rem;
+
+    h4 {
+      font-size: 0.6rem;
+    }
+
+    svg {
+      font-size: 1rem;
+    }
+  }
 `;
 
 export const FormStyle = styled.form`
@@ -126,6 +153,15 @@ export const FormStyle = styled.form`
     transform: translate(100%, -50%);
     color: white;
   }
+
+  @media (max-width: 768px) {
+    margin: 0rem 2rem;
+
+    input {
+      font-size: 1rem;
+      padding: 0.8rem 2rem;
+    }
+  }
 `;
 
 export const DetailWrapper = styled.div`
@@ -148,6 +184,24 @@ export const DetailWrapper = styled.div`
   ul {
     margin-top: 2rem;
   }
+  img {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+      font-size: 1rem;
+    }
+
+    li {
+      font-size: 1rem;
+    }
+  }
 `;
 
 export const Button = styled.button`
@@ -159,6 +213,12 @@ export const Button = styled.button`
   margin-bottom: 2rem;
   font-weight: 600;
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
 `;
 
 export const Info = styled.div`
@@ -169,6 +229,15 @@ export const Info = styled.div`
   li {
     font-size: 1rem;
   }
+  p {
+    max-width: 500px;
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+  }
 `;
 
 export const Logo = styled(Link)`
@@ -176,6 +245,10 @@ export const Logo = styled(Link)`
   font-size: 1.5rem;
   font-weight: 400;
   font-family: "Lobster Two", cursive;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
 `;
 
 export const Nav = styled.div`
@@ -185,5 +258,9 @@ export const Nav = styled.div`
   align-items: center;
   svg {
     font-size: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 2rem 0rem;
   }
 `;

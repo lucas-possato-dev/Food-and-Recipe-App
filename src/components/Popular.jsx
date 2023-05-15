@@ -6,10 +6,21 @@ import { Link } from "react-router-dom";
 
 const Popular = () => {
   const [popular, setPopular] = useState([]);
+  const [perPage, setPerPage] = useState(4);
 
   useEffect(() => {
     getPopular();
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
+
+  const handleResize = () => {
+    const isMobile = window.innerWidth < 768;
+    setPerPage(isMobile ? 1 : 4);
+  };
 
   const getPopular = async () => {
     const check = localStorage.getItem("popular");
@@ -32,7 +43,7 @@ const Popular = () => {
         <h3>Popular Picks</h3>
         <Splide
           options={{
-            perPage: 4,
+            perPage,
             arrows: false,
             pagination: false,
             drag: "free",
